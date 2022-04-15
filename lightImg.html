@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>lightImg</title>
+  <style>
+    .container {
+      width: 300px;
+      height: 280px;
+      background: #333333;
+      margin: 0 auto;
+      position: relative;
+      /*overflow: hidden;*/
+    }
+
+    .container::after {
+      content: "";
+      height: 300%;
+      width: 10px;
+      background: #fff;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      opacity: .6;
+      filter: blur(6px);
+      animation: move 2s infinite ease-in;
+    }
+
+
+    @keyframes move {
+      0% {
+        transform: translate(-300px, -300px) rotate(45deg);
+      }
+      100% {
+        transform: translate(300px, 300px) rotate(45deg);
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <img src="https://s3.bmp.ovh/imgs/2022/04/04/1b16f598ef74793f.jpg">
+</div>
+</body>
+</html>
